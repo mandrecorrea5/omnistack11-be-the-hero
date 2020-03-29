@@ -27,6 +27,8 @@ export default function Register() {
         
         try{
             const response = await api.post('ongs', data);
+
+            console.log(response);
             alert(`Your access Id: ${response.data.id}`);
 
             history.push('/')
