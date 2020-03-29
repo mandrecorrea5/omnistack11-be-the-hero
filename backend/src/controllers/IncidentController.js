@@ -20,6 +20,8 @@ module.exports = {
 
         const [count] = await connection('incidents').count();
 
+        console.log(count['count(*)']);
+
         const ongs = await connection('incidents')
             .join('ongs', 'ongs.id', '=', 'incidents.ong_id')
             .limit(5)
